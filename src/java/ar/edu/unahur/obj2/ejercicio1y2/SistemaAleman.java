@@ -7,13 +7,6 @@ public class SistemaAleman extends SistemaDeAmortizacion {
     }
 
     @Override
-    public double capital(Prestamo prestamo) {
-        return prestamo.getCompromiso()*
-                duracion(prestamo)*
-                factorDeRiesgo();
-    }
-
-    @Override
     public int duracion(Prestamo prestamo) {
         return 360;
     }

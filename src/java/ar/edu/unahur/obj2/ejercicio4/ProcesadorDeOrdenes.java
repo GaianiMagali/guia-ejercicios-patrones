@@ -1,6 +1,6 @@
 package ar.edu.unahur.obj2.ejercicio4;
 
-public class ProcesadorDeOrdenes {
+public abstract class ProcesadorDeOrdenes {
 
     public void procesarOrden(boolean regalo) {
         seleccionarProducto();
@@ -11,19 +11,13 @@ public class ProcesadorDeOrdenes {
         entregar();
     }
 
-    protected void seleccionarProducto() {
-        System.out.println("Se seleccionar el producto en el local");
-    }
+    protected abstract void seleccionarProducto();
 
     protected void envolverParaRegalo() {
         System.out.println("Se envuelve para regalo el producto");
     }
 
-    protected void pagarProducto() {
-        System.out.println("Se Paga el producto con efecto o posnet");
-    }
+    protected abstract void pagarProducto();
 
-    protected void entregar() {
-        System.out.println("Se entrega el producto en el mostrador");
-    }
+    protected abstract void entregar();
 }

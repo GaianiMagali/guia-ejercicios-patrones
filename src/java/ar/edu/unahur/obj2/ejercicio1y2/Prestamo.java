@@ -8,19 +8,19 @@ public class Prestamo {
     private float hipoteca;
     private float excepcional;
     private int rating;
-    private Date expiry;
+    private String expiry;
     private Date madurez;
 
 
-
     public Prestamo(float hipoteca, float excepcional,
-                    int rating, Date expiry) {
+                    int rating, String expiry) {
         this.estrategia = new SistemaFrances(this);
         this.hipoteca = hipoteca;
         this.excepcional = excepcional;
         this.rating = rating;
         this.expiry = expiry;
     }
+    /*
     public Prestamo(float hipoteca, float excepcional,
                     int rating, Date expiry, Date madurez) {
         this.estrategia = new SistemaFrances(this);
@@ -40,10 +40,11 @@ public class Prestamo {
         this.expiry = expiry;
         this.madurez = madurez;
     }
-
+ */
     public double getCompromiso() {
         return hipoteca*rating;
     }
+
 
     public double getPorcentajeNoUtilizado() {
         return excepcional*rating;

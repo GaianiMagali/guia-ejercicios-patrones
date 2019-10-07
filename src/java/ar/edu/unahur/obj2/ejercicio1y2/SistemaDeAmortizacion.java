@@ -8,8 +8,6 @@ public abstract class SistemaDeAmortizacion {
         this.prestamo = prestamo;
     }
 
-    public abstract  double capital(Prestamo prestamo);
-
     public int duracion(Prestamo prestamo)  {
         return 180;
     }
@@ -18,5 +16,10 @@ public abstract class SistemaDeAmortizacion {
         return 1.8;
     }
 
-
+    public double capital(Prestamo prestamo) {
+        return prestamo.getCompromiso()*
+                prestamo.getPorcentajeNoUtilizado() *
+                duracion(prestamo)*
+                factorDeRiesgo();
+    }
 }
